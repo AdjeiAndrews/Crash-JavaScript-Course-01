@@ -17,3 +17,50 @@ section {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     overflow: hidden;
 }
+
+.cont {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+}
+
+#gradient-cont {
+    height: 600px;
+    border-radius: 10px 2px 2px 6px;
+    width: 100%;
+}
+
+.colors {
+    outline: none;
+    border: none;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
+
+.randomColorBtn, .copyBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #007bbf;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.randomColorBtn:hover, .copyBtn:hover {
+    background: #0056b3;
+}
+
+.cssCode {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+    white-space: pre-wrap;
+    text-align: center;
+}
