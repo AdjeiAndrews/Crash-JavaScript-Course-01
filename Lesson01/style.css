@@ -1,0 +1,19 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    background: #f0f0f0;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
