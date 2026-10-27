@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     function makeColor(){
         let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-        return randomColor.padStart(6, '0');
+        return randomColor.padStart(6,'0');
     }
 
     function generateGradient(){
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     color1.addEventListener("input", setGradient);
     color2.addEventListener("input", setGradient);
 
-    btn.addEventListener("click, generateGradient");
+    btn.addEventListener("click", generateGradient);
     copyBtn.addEventListener("click", copyToClipboard);
 
 })
