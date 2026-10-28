@@ -60,3 +60,18 @@ button {
 button:hover {
     background-color: #e6ed2da7;
 }
+
+#result {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.result-item {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.result-item span {
+    font-weight: bold;
+    color: #4a00e0;
+}
