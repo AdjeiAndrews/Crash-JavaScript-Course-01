@@ -30,9 +30,9 @@ function calculateAge(){
     //Print data on the result element
 
     let resultHTML = `
-    <div class="result-item">Age: <span>${age}</span></div>
-    <div class="result-item">Months:<span>${monthDiff}</span></div>
-    <div class="result-item">Days:<span>${dayDiff}</span></div>`;
+    <div class="result-item">Age:<span>${age} years</span></div>
+    <div class="result-item">Months:<span>${monthDiff} months</span></div>
+    <div class="result-item">Days:<span>${dayDiff} days</span></div>`;
 
     document.getElementById('result').innerHTML = resultHTML;
 }
