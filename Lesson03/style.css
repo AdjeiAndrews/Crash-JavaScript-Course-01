@@ -1,8 +1,8 @@
 body {
     background: linear-gradient(to bottom, #ffccff, #cc99ff);
-    font-family: cursive, sans-serif;
     margin: 0;
     padding: 0;
+    font-family: cursive, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,8 +13,8 @@ body {
 .card {
     width: 400px;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 5px;
+    padding: 40px;
+    border-radius: 20px;
     box-shadow: 0 4px 15px rgb(255, 255, 255, 0.8);
     text-align: center;
     animation: fadeIn 2s ease-in-out, neon 1.5s infinite alternate;
@@ -23,8 +23,9 @@ body {
 @keyframes fadeIn {
     from{
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(0.8);
     }
+
     to{
         opacity: 1;
         transform: scale(1);
@@ -38,12 +39,35 @@ body {
         0 0 20px #ff99cc,
         0 0 30px #cc33ff,
         0 0 40px #9933ff;
+        ;
     }
+
     to{
          box-shadow: 
-        0 0 10px #9933ff,
-        0 0 20px #cc33ff,
-        0 0 30px #ff99cc,
-        0 0 40px #ff33cc;
+        0 0 20px #9933ff,
+        0 0 30px #cc33ff,
+        0 0 40px #ff99cc,
+        0 0 50px #ff33cc;
+        ;
     }
+}
+
+h1 {
+    color: #ff33cc;
+    font-size: 23x;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #ffe6ff;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #cc33ff;
+    font-size: 18px;
+    font-weight: bold;
 }
