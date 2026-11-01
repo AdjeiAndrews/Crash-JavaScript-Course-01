@@ -41,4 +41,22 @@ button {
     cursor: pointer;
     margin: 0 10px;
     width: 80px;
+    color: #fff;
+}
+
+#resetBtn {
+    background-color: #c82333;
+    margin-bottom: 20px;
+}
+
+#resetBtn:hover {
+    background-color: #b11c2b;
+}
+
+.blue-Btn {
+    font-size: 24px;
+}
+
+.blue-Btn:hover {
+    background-color: #222bff;
 }
