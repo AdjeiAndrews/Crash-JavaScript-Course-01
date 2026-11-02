@@ -23,6 +23,13 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
 .timer {
     font-size: 40px;
     background-color: #ffffff;
@@ -35,7 +42,7 @@ body {
 
 @keyframes pulse {
     from{
-        tramdform: scale(1);
+        transform: scale(1);
     }
     to{
         transform: scale(1.05);
@@ -63,4 +70,8 @@ button{
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #d72a76;
 }
