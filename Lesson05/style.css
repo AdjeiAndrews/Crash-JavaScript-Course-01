@@ -32,6 +32,7 @@ body {
 
 .timer {
     font-size: 40px;
+    font-weight: 450;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 5px;
@@ -53,7 +54,6 @@ body {
     width: 110px;
     display: inline-block;
     text-align: center;
-
 }
 
 .controls {
@@ -74,4 +74,36 @@ button{
 
 button:hover {
     background-color: #d72a76;
+}
+
+lap-title {
+    font-size: 1.5rem;
+}
+
+.laps {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: 200px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+li {
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li span {
+    font-weight: 700;
 }
