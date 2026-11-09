@@ -7,6 +7,8 @@ const stopButton = document.getElementById("stopBtn");
 const pauseButton = document.getElementById("pauseBtn");
 const resetButton = document.getElementById("resetBtn");
 
+const lapList = document.getElementById("lapList");
+
 let minutes = 0;
 let seconds = 0;
 let milliseconds = 0;
@@ -24,6 +26,11 @@ function startTimer() {
 }
 
 function stopTimer() {
+
+    clearInterval(interval);
+    addToLapList();
+    resetTimerData();
+    startButton.disabled = false;
 }
 
 function pauseTimer() {
@@ -67,4 +74,12 @@ function resetTimerData() {
     seconds = 0;
     milliseconds = 0;
     displayTimer();
+}
+
+function addToLapList() {
+    const lapTime = `${padTime(minutes)}: ${padTime(seconds)}: ${padTime(milliseconds)}`;
+
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `<span>Lap ${lapList.childElementCount + 1}</span>: ${lapTime}`;
+    lapList.appendChild(listItem);
 }
