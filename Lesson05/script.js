@@ -16,3 +16,33 @@ startButton.addEventListener("click", startTimer);
 stopButton.addEventListener("click", stopTimer);
 pauseButton.addEventListener("click", pauseTimer);
 resetButton.addEventListener("click", resetTimer);
+
+function startTimer() {
+
+}
+
+function stopTimer() {
+
+}
+
+function pauseTimer() {
+
+}
+
+function resetTimer() {
+    minutes = 0;
+    seconds = 0;
+    milliseconds = 0;
+}
+
+function updateTimer() {
+    milliseconds ++;
+    if (milliseconds === 100) {
+        milliseconds = 0;
+        seconds ++;
+        if (seconds === 60) {
+            seconds = 0;
+            minutes ++;
+        }
+    }
+}
