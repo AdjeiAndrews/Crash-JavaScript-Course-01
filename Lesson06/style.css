@@ -1,0 +1,21 @@
+body {
+    font-family: sans-serif;
+    background-color: honeydew;
+    margin: 0;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.calculator {
+    background: linear-gradient(120deg, #f56456, #f5576c);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 520px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
