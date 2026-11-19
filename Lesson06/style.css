@@ -99,3 +99,37 @@ button:hover {
     position: relative;
     z-index: 1;
 }
+
+.output-section p{
+    margin: 5px 0;
+    font-size: 18px;
+    color: white;
+}
+
+.output-section span{
+    font-weight: bold;
+}
+
+input[type="range"] {
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.9;
+    transition: 0.2s;
+    transition: opacity 2s;
+}
+
+input[type="range"] {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #28a745;
+    cursor: pointer;
+    border-radius: 50%;
+}
