@@ -13,4 +13,8 @@ document.addEventListener("DOMContentLoaded", function(){
     timePeriodInput.addEventListener("input", function(){
         updateTimePeroidValue(this.value);
     })
+
+    updateInvestmentValue(investmentInput.value);
+    updateInterestRateValue(interestRateInput.value);
+    updateTimePeriodValue(timePeriodInput.value);
 })
