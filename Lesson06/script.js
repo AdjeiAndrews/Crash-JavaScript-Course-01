@@ -17,21 +17,27 @@ document.addEventListener("DOMContentLoaded", function(){
     updateInvestmentValue(investmentInput.value);
     updateInterestRateValue(interestRateInput.value);
     updateTimePeriodValue(timePeriodInput.value);
+});
 
-    function updateInvestmentValue(value){
-    document.getElementById("investment-value").innerText = new Intl.NumberFormat("en-GH", {
-        style: "currency",
-        currency: "GHS",
-        maximumFractionDigits: 0
-    }).format(Number(value));
+function updateInvestmentValue(value){
+    document.getElementById("investment-value").innerText = `${parseFloat(value).toLocaleString('en-GH')}`;
 }
 
 function updateInterestRateValue(value){
-    document.getElementById("interest-rate-value").innerText = `${Number(value)}%`;
+    document.getElementById("interest-rate-value").innerText = `${parseFloat(value).toLocaleString('en-GH')}`;
 }
 
 function updateTimePeriodValue(value){
-    document.getElementById("time-period-value").innerText = `${Number(value)} years`;
+    document.getElementById("time-period-value").innerText = `${parseFloat(value).toLocaleString('en-GH')}`;
 }
-});
 
+function calculateFD() {
+
+    const principal = parseFloat(document.getElementById("investment").value);
+    const rateOfInterest = parseFloat(document.getElementById("interest-rate").value);
+    const timePeriod = parseFloat(document.getElementById("time-period").value);
+
+    const n = 4;
+    const totalAmount = principal * Math.pow((1 + (rateOfInterest / 100)/n), n * timePeriod);
+
+    const interestEarned = totalAmount - principal;
