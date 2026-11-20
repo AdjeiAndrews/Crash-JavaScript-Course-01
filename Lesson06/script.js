@@ -24,20 +24,29 @@ function updateInvestmentValue(value){
 }
 
 function updateInterestRateValue(value){
-    document.getElementById("interest-rate-value").innerText = `${parseFloat(value).toLocaleString('en-GH')}`;
+    document.getElementById("interest-rate-value").innerText = `${parseFloat(value).toFixed(1)}%`;
 }
 
 function updateTimePeriodValue(value){
-    document.getElementById("time-period-value").innerText = `${parseFloat(value).toLocaleString('en-GH')}`;
+    document.getElementById("time-period-value").innerText = value;
 }
 
 function calculateFD() {
 
     const principal = parseFloat(document.getElementById("investment").value);
+
     const rateOfInterest = parseFloat(document.getElementById("interest-rate").value);
+
     const timePeriod = parseFloat(document.getElementById("time-period").value);
 
     const n = 4;
     const totalAmount = principal * Math.pow((1 + (rateOfInterest / 100)/n), n * timePeriod);
 
     const interestEarned = totalAmount - principal;
+
+    document.getElementById("invested-amount").innerText = `₵${principal.toLocaleString('en-GH')}`;
+
+    document.getElementById("est-returns").innerText = `₵${Math.round(interestEarned).toLocaleString('en-GH')}`;
+    
+    document.getElementById("total-value").innerText = `₵${Math.round(totalAmount).toLocaleString('en-GH')}`;
+}
