@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 function updateInvestmentValue(value){
-    document.getElementById("investment-value").innerText = `${parseFloat(value).toLocaleString('en-GH')}`;
+    document.getElementById("investment-value").innerText = `₵${parseFloat(value).toLocaleString('en-GH')}`;
 }
 
 function updateInterestRateValue(value){
