@@ -63,9 +63,8 @@ h1 {
 
 #weekday {
     font-size: 80px;
-    color: #dd5800;
+    background-color: #dd5800;
     font-weight: 800;
-    
     animation: pulse 2s infinite;
 }
 
