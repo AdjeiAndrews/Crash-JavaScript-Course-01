@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: monospace;
+    font-size: 400;
+    color: #010120;
+}
+
+body {
+    background-color: #8b5ceb;
+}
+
+.wrapper {
+    background-color: #fff;
+    width: 45px;
+    min-width: 550px;
+    padding: 30px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 8px;
+}
