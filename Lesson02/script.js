@@ -1,10 +1,25 @@
 function calculateAge(){
-    const birthdate = new Date(document.getElementById("birthdate").value);
+    const value = document.getElementById("birthdate").value;
+    const result = document.getElementById("result");
 
+    if (!value) {
+        result.textContent = 'Please enter your birthdate.';
+        return;
+    }
+
+    // Parse the date as local calendar values so it is not shifted by timezone.
+    const [year, month, day] = value.split('-').map(Number);
+    const birthdate = new Date(year, month - 1, day);
     const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
     if(isNaN(birthdate.getTime())){
-        document.getElementById("result").innerHTML = 'Please enter a valid date.';
+        result.textContent = 'Please enter a valid date.';
+        return;
+    }
+
+    if (birthdate > today) {
+        result.textContent = 'Birthdate cannot be in the future.';
         return;
     }
 
@@ -34,5 +49,5 @@ function calculateAge(){
     <div class="result-item">Months:<span>${monthDiff} months</span></div>
     <div class="result-item">Days:<span>${dayDiff} days</span></div>`;
 
-    document.getElementById('result').innerHTML = resultHTML;
+    result.innerHTML = resultHTML;
 }

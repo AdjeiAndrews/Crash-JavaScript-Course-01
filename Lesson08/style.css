@@ -4,7 +4,7 @@
     box-sizing: border-box;
     outline: none;
     font-family: monospace;
-    font-size: 400;
+    font-weight: 400;
     color: #010120;
 }
 
@@ -14,8 +14,7 @@ body {
 
 .wrapper {
     background-color: #fff;
-    width: 45px;
-    min-width: 550px;
+    width: min(90vw, 550px);
     padding: 30px;
     position: absolute;
     transform: translate(-50%, -50%);

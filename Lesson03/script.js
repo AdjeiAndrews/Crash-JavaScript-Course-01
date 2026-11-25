@@ -1,7 +1,7 @@
 function calculateLove(){
 
-    const name1 = document.getElementById("name1").value;
-    const name2 = document.getElementById("name2").value;
+    const name1 = document.getElementById("name1").value.trim();
+    const name2 = document.getElementById("name2").value.trim();
 
 
     if(!name1 || !name2){
@@ -11,16 +11,19 @@ function calculateLove(){
 
     const lovePercentage = Math.floor(Math.random() * 101);
     const result = document.getElementById("result");
-    result.innerHTML = `${name1} and ${name2}'s Love Percentage: ${lovePercentage}%`;
+    result.textContent = `${name1} and ${name2}'s Love Percentage: ${lovePercentage}%`;
 
 
+    let message;
     if(lovePercentage <= 50){
-        result.innerHTML += "<br> Not a great Math. Keep Looking!";
+        message = "Not a great match. Keep looking!";
     }
     else if(lovePercentage < 70){
-        result.innerHTML += "<br> There's potential. Give a shot!";
+        message = "There's potential. Give it a shot!";
     }
     else {
-        result.innerHTML += "<br> Great Match. Love is in the Air!";
+        message = "Great match. Love is in the air!";
     }
+
+    result.append(document.createElement("br"), message);
 }

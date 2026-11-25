@@ -13,6 +13,7 @@ let minutes = 0;
 let seconds = 0;
 let milliseconds = 0;
 let timerInterval;
+let isRunning = false;
 
 startButton.addEventListener("click", startTimer);
 stopButton.addEventListener("click", stopTimer);
@@ -20,27 +21,33 @@ pauseButton.addEventListener("click", pauseTimer);
 resetButton.addEventListener("click", resetTimer);
 
 function startTimer() {
-    interval = setInterval(updateTimer, 10);
+    if (isRunning) return;
+    isRunning = true;
+    timerInterval = setInterval(updateTimer, 10);
     startButton.disabled = true;
-
 }
 
 function stopTimer() {
 
-    clearInterval(interval);
-    addToLapList();
+    clearInterval(timerInterval);
+    if (isRunning || minutes || seconds || milliseconds) {
+        addToLapList();
+    }
+    isRunning = false;
     resetTimerData();
     startButton.disabled = false;
 }
 
 function pauseTimer() {
-    clearInterval(interval);
+    clearInterval(timerInterval);
+    isRunning = false;
     startButton.disabled = false;
 
 }
 
 function resetTimer() {
-    clearInterval(interval);
+    clearInterval(timerInterval);
+    isRunning = false;
     resetTimerData();
     startButton.disabled = false;
 }
@@ -80,6 +87,6 @@ function addToLapList() {
     const lapTime = `${padTime(minutes)}: ${padTime(seconds)}: ${padTime(milliseconds)}`;
 
     const listItem = document.createElement("li");
-    listItem.innerHTML = `<span>Lap ${lapList.childElementCount + 1}</span>: ${lapTime}`;
+    listItem.textContent = `Lap ${lapList.childElementCount + 1}: ${lapTime}`;
     lapList.appendChild(listItem);
 }

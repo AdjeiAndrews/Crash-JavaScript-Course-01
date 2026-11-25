@@ -1,32 +1,35 @@
-let outputCode = getElementById("css-code");
+const output = document.getElementById("css-code");
+const blob = document.querySelector(".blob");
+const sliders = document.querySelectorAll("input[type='range']");
+const inputs = document.querySelectorAll("input[type='number']");
 
-let sliders = document.querySelectorAll("input[type='range']");
-sliders.forEach(function(slider){
-    sliders.addEventListener("input", createBlob)
-});
+sliders.forEach((slider) => slider.addEventListener("input", createBlob));
+inputs.forEach((input) => input.addEventListener("input", createBlob));
 
-let inputs = document.querySelectorAll("input[type='number']");
-inputs.forEach(function(input){
-    input.addEventListener("change", createBlob)
-});
+function createBlob() {
+    const [topLeft, topRight, bottomLeft, bottomRight] = Array.from(sliders, (slider) => Number(slider.value));
+    const [height, width] = Array.from(inputs, (input) => Math.max(1, Number(input.value) || 1));
 
-function createBlob(){
+    const borderRadius = `${topLeft}% ${100 - topLeft}% ${100 - bottomLeft}% ${bottomLeft}% / ${bottomRight}% ${topRight}% ${100 - topRight}% ${100 - bottomRight}%`;
+    const blobStyle = `border-radius: ${borderRadius}; height: ${height}px; width: ${width}px;`;
 
-    let radiusOne = sliders[0].value;
-    let radiusTwo = sliders[1].value;
-    let radiusThree = sliders[2].value;
-    let radiusFour = sliders[3].value;
-
-
-    let blolbHeight = inputs[0].value;
-    let blobWidth = inputs[1].value;
-
-
-    let borderRadius = `${radiusOne}% ${100 - radiusOne}% ${100-radiusThree}% ${radiusThree}% /${radiusFour}% ${radiusTwo}% ${100 - radiusTwo}% ${radiusFour}`;
+    blob.style.cssText = blobStyle;
+    output.value = blobStyle;
 }
 
+createBlob();
 
-
-document.getElementById("copy").addEventListener("click", function(){
-
+document.getElementById("copy").addEventListener("click", async () => {
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(output.value);
+        } else {
+            output.select();
+            if (!document.execCommand("copy")) throw new Error("Copy command failed");
+            output.setSelectionRange(0, 0);
+        }
+        alert("CSS copied to clipboard.");
+    } catch (error) {
+        console.error("Could not copy CSS:", error);
+    }
 });

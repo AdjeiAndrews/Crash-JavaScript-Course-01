@@ -27,14 +27,27 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     }
 
-    function copyToClipboard(){
+    async function copyToClipboard(){
         const cssText = cssCode.textContent;
-        navigator.clipboard.writeText(cssText).then(()=>{
+        try {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(cssText);
+            } else {
+                const temporaryInput = document.createElement("textarea");
+                temporaryInput.value = cssText;
+                temporaryInput.setAttribute("readonly", "");
+                temporaryInput.style.position = "fixed";
+                temporaryInput.style.opacity = "0";
+                document.body.appendChild(temporaryInput);
+                temporaryInput.select();
+                const copied = document.execCommand("copy");
+                temporaryInput.remove();
+                if (!copied) throw new Error("Copy command failed");
+            }
             alert("css code copied to clipboard!");
-        })
-        .catch(err=>{
+        } catch(err) {
             console.error("Failed to copy", err);
-        })
+        }
     }
 
     generateGradient();
