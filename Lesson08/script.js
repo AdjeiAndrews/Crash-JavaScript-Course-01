@@ -28,7 +28,6 @@ document.getElementById("copy").addEventListener("click", async () => {
             if (!document.execCommand("copy")) throw new Error("Copy command failed");
             output.setSelectionRange(0, 0);
         }
-        alert("CSS copied to clipboard.");
     } catch (error) {
         console.error("Could not copy CSS:", error);
     }
