@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
     <div class="wrapper">
+
       <div class="editor">
+
         <div class="filter">
           <label for="blur">Blur</label>
           <input type="range" min="0" max="5" value="0" step="0.1" id="blur" />
@@ -33,7 +36,35 @@
           <input type="range" min="0" max="100" value="0" id="sepia" />
           <span class="range-class" id="sepia-value">0%</span>
         </div>
+
+        <div class="flip-buttons">
+          <div class="flip-option">
+            <input type="radio" name="flip" id="no-flip" checked />
+            <label for="no-flip">No Flip</label>
+          </div>
+
+          <div class="flip-option">
+            <input type="radio" name="flip" id="flip-x"/>
+            <label for="flip-x">Flip Horizontal</label>
+        </div>
+
+         <div class="flip-option">
+            <input type="radio" name="flip" id="flip-y"/>
+            <label for="flip-y">Flip Vertical</label>
+        </div>
+
       </div>
+
+      <input class="result">
+        <figure class="image-container">
+          <img id="chosen-image">
+        </figure>
+        <input type="file" is="upload-button" accept="image/*">
+        <label for="upload-image">Choose an Image</label>
+        <input id="download-image">Download Image</input>
+
+      </div>
+
     </div>
     <script src="script.js"></script>
   </body>
