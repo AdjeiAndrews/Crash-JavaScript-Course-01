@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Image Editor</title>
 
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -20,6 +20,18 @@
           <label for="contrast">Contrast</label>
           <input type="range" min="0" max="200" value="100" id="contrast" />
           <span class="range-class" id="contrast-value">100%</span>
+        </div>
+
+        <div class="filter">
+          <label for="hue-rotate">Hue-Rotate</label>
+          <input type="range" min="0" max="360" value="0" id="hue-rotate" />
+          <span class="range-class" id="hue-rotate-value">0%</span>
+        </div>
+
+        <div class="filter">
+          <label for="sepia">Sepia</label>
+          <input type="range" min="0" max="100" value="0" id="sepia" />
+          <span class="range-class" id="sepia-value">0%</span>
         </div>
       </div>
     </div>
